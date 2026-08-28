@@ -9,7 +9,10 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+// Lumang standalone login window na gumagamit ng credential map.
+// Ang pangunahing application login ay nasa LibraryManagementSystem.
 public class LoginPage implements ActionListener {
+    // Mga visual component ng login window.
     private final JFrame frame;
     private final JButton loginButton;
     private final JButton resetButton;
@@ -18,8 +21,10 @@ public class LoginPage implements ActionListener {
     private final JLabel userIDLabel;
     private final JLabel userPasswordLabel;
     private final JLabel messageLabel;
+    // Credential map na ginagamit ng standalone login.
     private final Map<String, String> loginInfo;
 
+    // Gumagawa ng login form at ikinakabit ang mga event handler nito.
     public LoginPage(Map<String, String> loginInfoOriginal) {
         this.loginInfo = loginInfoOriginal;
 
@@ -56,13 +61,15 @@ public class LoginPage implements ActionListener {
         frame.add(loginButton);
         frame.add(resetButton);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(420, 420);
+        frame.setSize(480, 360);
+        frame.setMinimumSize(new java.awt.Dimension(420, 320));
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
     @Override
+    // Pinoproseso ang reset at login actions ng user.
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == resetButton) {
             userIDField.setText("");

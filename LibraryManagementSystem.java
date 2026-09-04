@@ -1207,6 +1207,7 @@ public class LibraryManagementSystem extends JFrame {
         private final boolean visible;
 
         private EyeIcon(boolean visible) {
+           
             this.visible = visible;
         }
 

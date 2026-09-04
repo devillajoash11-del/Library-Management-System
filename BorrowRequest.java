@@ -12,6 +12,7 @@ public class BorrowRequest {
     private String bookID;
     // Oras kung kailan ginawa ang request.
     private Date requestDate;
+    private Date dueDate;
     // Kasalukuyang estado ng request.
     private String status;
 
@@ -22,11 +23,17 @@ public class BorrowRequest {
     }
 
     public BorrowRequest(String requestID, String studentID, String borrowerName, String bookID, Date requestDate, String status) {
+        this(requestID, studentID, borrowerName, bookID, requestDate, null, status);
+        }
+
+        public BorrowRequest(String requestID, String studentID, String borrowerName, String bookID,
+            Date requestDate, Date dueDate, String status) {
         this.requestID = requestID;
         this.studentID = studentID;
         this.borrowerName = borrowerName;
         this.bookID = bookID;
         this.requestDate = requestDate;
+        this.dueDate = dueDate;
         this.status = status;
     }
 
@@ -53,6 +60,10 @@ public class BorrowRequest {
     // Ibinabalik ang oras ng request.
     public Date getRequestDate() {
         return requestDate;
+    }
+
+    public Date getDueDate() {
+        return dueDate;
     }
 
     // Ibinabalik ang status ng request.

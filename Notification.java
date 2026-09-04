@@ -10,13 +10,19 @@ public class Notification {
     private Date sentDate;
     // Kasalukuyang estado ng notification.
     private String status;
+    private String recipientID;
 
     // Gumagawa ng notification kasama ang mensahe at status.
     public Notification(String notificationID, String message, Date sentDate, String status) {
+        this(notificationID, message, sentDate, status, "");
+    }
+
+    public Notification(String notificationID, String message, Date sentDate, String status, String recipientID) {
         this.notificationID = notificationID;
         this.message = message;
         this.sentDate = sentDate;
         this.status = status;
+        this.recipientID = recipientID;
     }
 
     // Ibinabalik ang notification ID.
@@ -37,6 +43,10 @@ public class Notification {
     // Ibinabalik ang notification status.
     public String getStatus() {
         return status;
+    }
+
+    public String getRecipientID() {
+        return recipientID;
     }
 
     // Minamarkahan ang notification bilang reminder na naipadala.
